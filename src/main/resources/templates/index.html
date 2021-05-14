@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Trips by Wheels. Car Rental System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- Website icon-->
+    <link href="data:image/x-icon;base64,
+    AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAA
+    AAEAAAAAAAAAAAAAAA/4QAAAD/3QAfHRsA/xEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMwAAAzMAAEMjRERDI0
+    QEQzNBEUMzQUQURBERFEQRQERERERERERAAABCIkAAAAAAAAREQAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AADHxwAAgAEAAAAAAAAAAAAAgA
+    AAAPg/AAD8PwAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+</head>
+<body>
+
+    <div align="center" class="container my-2">
+        <h2>Car List</h2>
+        <table border="1" class = "table table-striped table-responsive-md">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Brand</th>
+                    <th>Gamma Vehicle</th>
+                    <th>Model</th>
+                    <th>Transmission</th>
+                    <th>Seats Capacity</th>
+                    <th>Price (per day)</th>
+                </tr>
+            </thead>
+            <body>
+                <tr th:each="vehicle : ${listVehicles}">
+                    <td th:text="${vehicle.brand}"></td>
+                    <td th:text="${vehicle.gammaVehicle.idGammaVehicle}"></td>
+                    <td th:text="${vehicle.model}"></td>
+                    <td th:text="${vehicle.transmission}"></td>
+                    <td th:text="${vehicle.seatsCapacity}"></td>
+                    <td th:text="${vehicle.price}"></td>
+                </tr>
+            </body>
+        </table>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer th:fragment="footer" class="bg-dark text-center text-white fixed-bottom">
+
+        <div class="container">
+            <p>Copyright Trips by Wheels &copy; - 2021</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </footer>
+
+
+</body>
+</html>
